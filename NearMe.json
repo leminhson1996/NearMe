@@ -1,0 +1,179 @@
+{
+  "Categories": [
+    {
+      "imageLink": "https://leminhson1996.github.io/EcommerceGroup1/xang.png",
+      "title": "Cây Xăng",
+      "counter": 100,
+      "items": [
+        {
+          "title": "123 Lý Thường Kiệt",
+          "latitude": 10.823368,
+          "longtitude": 106.682572,
+          "phone": "0967913097"
+        },
+        {
+          "title": "222 Lý Thường Kiệt",
+          "longtitude": 106.683552,
+          "latitude": 10.8235837,
+           "phone": "0967913097"
+        },
+        {
+          "title": "66 Nguyen Tri Phuong",
+          "latitude": 10.7670247,
+          "longtitude": 106.668602,
+           "phone": "0967913097"
+        }
+      ]
+    },
+    {
+      "imageLink": "https://leminhson1996.github.io/EcommerceGroup1/money.png",
+      "title": "ATM",
+      "counter": 100,
+      "items": [
+        {
+          "title": "Đại học Y Dược",
+          "latitude": 10.7721302,
+          "longtitude": 106.659769,
+           "phone": "0967913097"
+        },
+         {
+          "title": "222 Lý Thường Kiệt",
+          "longtitude": 106.683552,
+          "latitude": 10.8235837,
+           "phone": "0967913097"
+        },
+        {
+          "title": "66 Nguyễn Tri Phương",
+          "latitude": 10.7670247,
+          "longtitude": 106.668602,
+          "phone": "0967913097"
+        }
+      ]
+    },
+    {
+      "imageLink": "https://leminhson1996.github.io/EcommerceGroup1/restaurant.png",
+      "title": "Nhà hàng",
+      "counter": 100,
+      "items": [
+        {
+          "title": "Đại học Y Dược",
+          "latitude": 10.7721302,
+          "longtitude": 106.659769,
+          "phone": "0967913097"
+        },
+         {
+          "title": "222 Lý Thường Kiệt",
+          "longtitude": 106.683552,
+          "latitude": 10.8235837,
+           "phone": "0967913097"
+        },
+        {
+          "title": "66 Nguyễn Tri Phương",
+          "latitude": 10.7670247,
+          "longtitude": 106.668602,
+          "phone": "0967913097"
+        }
+      ]
+    },
+    {
+      "imageLink": "https://leminhson1996.github.io/EcommerceGroup1/football.png",
+      "title": "Sân bóng mini",
+      "counter": 100,
+      "items": [
+        {
+          "title": "Đại học Y Dược",
+          "latitude": 10.7721302,
+          "longtitude": 106.659769,
+          "phone": "0967913097"
+        },
+        {
+          "title": "222 Lý Thường Kiệt",
+          "longtitude": 106.683552,
+          "latitude": 10.8235837,
+           "phone": "0967913097"
+        },
+        {
+          "title": "66 Nguyễn Tri Phương",
+          "latitude": 10.7670247,
+          "longtitude": 106.668602,
+          "phone": "0967913097"
+        }
+      ]
+    },
+    {
+      "imageLink": "https://leminhson1996.github.io/EcommerceGroup1/gym.png",
+      "title": "Phòng tập Gym",
+      "counter": 100,
+      "items": [
+        {
+          "title": "Đại học Y Dược",
+          "latitude": 10.7721302,
+          "longtitude": 106.659769,
+          "phone": "0967913097"
+        },
+        {
+          "title": "222 Lý Thường Kiệt",
+          "longtitude": 106.683552,
+          "latitude": 10.8235837,
+           "phone": "0967913097"
+        },
+        {
+          "title": "66 Nguyễn Tri Phương",
+          "latitude": 10.7670247,
+          "longtitude": 106.668602,
+          "phone": "0967913097"
+        }
+      ]
+    },
+    {
+      "imageLink": "https://leminhson1996.github.io/EcommerceGroup1/cinema.png",
+      "title": "Rạp chiếu phim",
+      "counter": 100,
+      "items": [
+        {
+          "title": "Đại học Y Dược",
+          "latitude": 10.7721302,
+          "longtitude": 106.659769,
+          "phone": "0967913097"
+        },
+        {
+          "title": "222 Lý Thường Kiệt",
+          "longtitude": 106.683552,
+          "latitude": 10.8235837,
+           "phone": "0967913097"
+        },
+        {
+          "title": "66 Nguyễn Tri Phương",
+          "latitude": 10.7670247,
+          "longtitude": 106.668602,
+          "phone": "0967913097"
+        }
+      ]
+    },
+    {
+      "imageLink": "https://leminhson1996.github.io/EcommerceGroup1/supermarket.png",
+      "title": "Siêu thị",
+      "counter": 100,
+      "items": [
+        {
+          "title": "Đại học Y Dược",
+          "latitude": 10.7721302,
+          "longtitude": 106.659769,
+          "phone": "0967913097"
+        },
+        {
+          "title": "222 Lý Thường Kiệt",
+          "longtitude": 106.683552,
+          "latitude": 10.8235837,
+           "phone": "0967913097"
+        },
+        {
+          "title": "66 Nguyễn Tri Phương",
+          "latitude": 10.7670247,
+          "longtitude": 106.668602,
+          "phone": "0967913097"
+        }
+      ]
+    }
+  ]
+}
