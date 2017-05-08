@@ -8,6 +8,8 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.squareup.picasso.Picasso;
+
 import java.util.ArrayList;
 
 /**
@@ -37,25 +39,18 @@ public class HomeAdapter extends ArrayAdapter<Model> {
         // 2. Get rowView from inflater
 
         View rowView = null;
-        if(!modelsArrayList.get(position).isGroupHeader()){
-            rowView = inflater.inflate(R.layout.target_item, parent, false);
+        rowView = inflater.inflate(R.layout.target_item, parent, false);
 
-            // 3. Get icon,title & counter views from the rowView
-            ImageView imgView = (ImageView) rowView.findViewById(R.id.item_icon);
-            TextView titleView = (TextView) rowView.findViewById(R.id.item_title);
-            TextView counterView = (TextView) rowView.findViewById(R.id.item_counter);
+        // 3. Get icon,title & counter views from the rowView
+        ImageView imgView = (ImageView) rowView.findViewById(R.id.item_icon);
+        TextView titleView = (TextView) rowView.findViewById(R.id.item_title);
+        TextView counterView = (TextView) rowView.findViewById(R.id.item_counter);
 
-            // 4. Set the text for textView
-            imgView.setImageResource(modelsArrayList.get(position).getIcon());
-            titleView.setText(modelsArrayList.get(position).getTitle());
-            counterView.setText(modelsArrayList.get(position).getCounter());
-        }
-        else{
-            rowView = inflater.inflate(R.layout.group_header_item, parent, false);
-            TextView titleView = (TextView) rowView.findViewById(R.id.header);
-            titleView.setText(modelsArrayList.get(position).getTitle());
+        // 4. Set the text for textView
+        Picasso.with(context).load(modelsArrayList.get(position).getImageLink()).into(imgView);
+        titleView.setText(modelsArrayList.get(position).getTitle());
+        counterView.setText(modelsArrayList.get(position).getCounter());
 
-        }
         // 5. retrn rowView
         return rowView;
     }

@@ -24,13 +24,24 @@
             android:layout_height="wrap_content"
             android:text="Gần nhất"
             android:id="@+id/nearestButton"
+            android:background="#03A9F4"
+            android:textColor="#FFFFFF"
             android:layout_weight="1"/>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Bán kính: 5km"
+            android:text="Tìm theo bán kính(km)"
             android:id="@+id/radiusButton"
+            android:onClick="inputRadius"
+            android:textColor="#FFFFFF"
+            android:background="#673AB7"
             android:layout_weight="1"/>
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2"
+            android:layout_weight="0.5"
+            android:id="@+id/inputRadius"/>
     </LinearLayout>
 
     <ListView

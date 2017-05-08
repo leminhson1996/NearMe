@@ -1,9 +1,11 @@
 package com.example.leminhson.nearme;
 
 import android.app.ProgressDialog;
+import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.speech.RecognizerIntent;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -20,13 +22,23 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import android.os.Handler;
+import android.widget.Toast;
+
+import java.util.Locale;
+import java.util.concurrent.RunnableFuture;
+import java.util.logging.LogRecord;
+
+import static java.lang.System.in;
 
 public class HomeActivity extends AppCompatActivity {
     private String TAG = HomeActivity.class.getSimpleName();
     public static final String EXTRA_MESSAGE = "categoryTitle";
     ArrayList<Model> categories;
     private ListView listView;
+    public HomeAdapter adapter;
     private ProgressDialog pDialog;
+    private final int REQ_CODE_SPEECH_INPUT = 100;
     // URL to get contacts JSON
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,7 +69,17 @@ public class HomeActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                promptSpeechInput();
+            }
+        });
+
     }
+
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -150,8 +172,57 @@ public class HomeActivity extends AppCompatActivity {
             if (pDialog.isShowing())
                 pDialog.dismiss();
 
-            HomeAdapter adapter = new HomeAdapter(HomeActivity.this, categories);
-            listView.setAdapter(adapter);
+            String link = categories.get(0).getImageLink();
+            adapter = new HomeAdapter(HomeActivity.this, categories);
+            Handler handler = new Handler();
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run()
+                {
+                    listView.setAdapter(adapter);
+                }
+            }, 1000);
+        }
+    }
+
+    private void promptSpeechInput() {
+        Intent intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
+        intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL,
+                RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
+        intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, Locale.getDefault());
+        intent.putExtra(RecognizerIntent.EXTRA_PROMPT,
+                getString(R.string.speech_prompt));
+        try {
+            startActivityForResult(intent, REQ_CODE_SPEECH_INPUT);
+        } catch (ActivityNotFoundException a) {
+            Toast.makeText(getApplicationContext(),
+                    getString(R.string.speech_not_supported),
+                    Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        switch (requestCode) {
+            case REQ_CODE_SPEECH_INPUT: {
+                if (resultCode == RESULT_OK && null != data) {
+
+                    ArrayList<String> result = data
+                            .getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
+                    for (Model category: categories){
+                        if (category.getTitle().toLowerCase().equals(result.get(0).toLowerCase())){
+                            String title = category.getTitle();
+                            Intent intent = new Intent(HomeActivity.this, CategoryDetail.class);
+                            intent.putExtra(EXTRA_MESSAGE, title);
+                            startActivity(intent);
+                        }
+                    }
+                }
+                break;
+            }
+
         }
     }
 }

@@ -2,34 +2,26 @@ package com.example.leminhson.nearme;
 
 import com.google.android.gms.maps.model.LatLng;
 
-import java.util.ArrayList;
-
 /**
- * Created by leminhson on 5/6/17.
+ * Created by leminhson on 5/8/17.
  */
 
-public class Model {
-
-    private int icon;
+public class Item{
     private String title;
     private String counter;
     private String imageLink;
-    private boolean isGroupHeader = false;
+    private String phone;
+    private LatLng position;
 
-    public Model(String title){
+    public Item(String title){
         this.title = title;
     }
-    public Model(int icon, String title, String counter) {
+
+    public Item(String imageLink, String title, String counter) {
         super();
-        this.icon = icon;
+        this.imageLink = imageLink;
         this.title = title;
         this.counter = counter;
-    }
-    public int getIcon() {
-        return icon;
-    }
-    public void setIcon(int icon) {
-        this.icon = icon;
     }
     public String getTitle() {
         return title;
@@ -49,10 +41,14 @@ public class Model {
     public void setCounter(String counter) {
         this.counter = counter;
     }
-    public boolean isGroupHeader() {
-        return isGroupHeader;
+    public void setPosition(LatLng position){this.position = position;}
+    public LatLng getPosition(){return position;}
+
+    public String getPhone() {
+        return phone;
     }
-    public void setGroupHeader(boolean isGroupHeader) {
-        this.isGroupHeader = isGroupHeader;
+
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 }
